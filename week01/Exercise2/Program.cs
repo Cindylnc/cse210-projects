@@ -40,7 +40,7 @@ class Program
         }
         else
         {
-            Console.WriteLine("You did not pass. Try again, you got this!");
+            Console.WriteLine("You did not pass. Try again, you got this! ");
         }
     }
 }
