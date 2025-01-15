@@ -1,4 +1,5 @@
 using System;
+using System.Net.Http.Headers;
 
 class Program
 {
@@ -24,8 +25,22 @@ class Program
         /*string full = job1.DisplayJobDetails();
         Console.WriteLine(full);*/
 
-        Console.WriteLine(job1.DisplayJobDetails());
-        Console.WriteLine(job2.DisplayJobDetails());
+        /*Console.WriteLine(job1.DisplayJobDetails());
+        Console.WriteLine(job2.DisplayJobDetails());*/
+
+        Resume person1 = new Resume();
+        person1._name = "Allison Rose";
+
+        /****Console.WriteLine(person1._jobDetails[0]._jobTile);****/
+
+        person1._jobDetails.Add(job1);
+        person1._jobDetails.Add(job2);
+
+        person1.Display();
+
+
+
+
 
 
 
