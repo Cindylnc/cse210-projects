@@ -11,6 +11,5 @@ public class Resume
         {
             job.DisplayJobDetails();
         }
-
     }
 }
