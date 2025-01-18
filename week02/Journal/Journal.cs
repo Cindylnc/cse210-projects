@@ -26,45 +26,30 @@ public class Journal
         }
         Console.WriteLine ($"Journal Entry saved to {file}");
     }
-    public void LoadFromFile (string file)
+       
+
+    public void LoadFromFile (string fileName)
     {
-        string[] lines = System.IO.File.ReadAllLines (file);
+        string [] lines = File.ReadAllLines(fileName);
         foreach (string line in lines)
         {
-            /*Console.WriteLine(line);
-            string[] parts = line.Split("|");
-            if (parts.Length == 3)
-            {
-                Console.WriteLine();                
-                 _entries.Add(new Entry
-                {
-                    _date = parts[0],
-                    _promptText = parts[1],
-                    
-                    _entryText = parts[2],
-                });
-               
-            }*/
+            string [] parts = line.Split("|");
 
-            string[] parts = line.Split("|");
             if (parts.Length == 3)
             {
                 Entry newEntry = new Entry
                 {
                     _date = parts[0],
-                    _promptText = parts[1],  
-                    _entryText = parts[2],
+                    _promptText = parts [1],
+                    _entryText = parts [2]
+
                 };
-                //_entries.Add(newEntry);
+                _entries.Add(newEntry);
             }
         }
-
-        foreach (Entry entry in _entries)
-        {
-            entry.Display();
-        }
-        
-    
+        Console.WriteLine($"Journal loaded from {fileName}");
     }
+
+
 
 }
