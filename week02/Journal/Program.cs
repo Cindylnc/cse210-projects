@@ -35,6 +35,12 @@ class Program
             //WRITE
             if (menu == "1")
             {
+
+                //ADDITIONAL INFO: MOOD TRACKER
+                Console.Write("What was your overall mood today? (Enter 1 for extremely bad and 5 for extremely good): ");
+                string moodOfTheDay = Console.ReadLine();
+
+                //Generate random prompt and Get user's response
                 string randomPrompt = promptGenerator.GetRandomPrompt();
                 Console.WriteLine(randomPrompt);
                 string userResponse = Console.ReadLine();
@@ -47,6 +53,7 @@ class Program
                 Entry newEntry = new Entry
                 {
                     _date = dateText,
+                    _moodTracker = moodOfTheDay,
                     _promptText = randomPrompt,
                     _entryText = userResponse,
                 };

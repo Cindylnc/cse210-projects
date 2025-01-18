@@ -21,10 +21,10 @@ public class Journal
         {
             foreach (Entry entry in _entries)
             {
-                outputFile.WriteLine($"{entry._date}| {entry._promptText}|{entry._entryText}");
+                outputFile.WriteLine($"{entry._date}| {entry._moodTracker}| {entry._promptText}|{entry._entryText}");
             }
         }
-        Console.WriteLine ($"Journal Entry saved to {file}");
+        Console.WriteLine ($"Journal entry saved to {file}");
     }
        
 
@@ -35,13 +35,14 @@ public class Journal
         {
             string [] parts = line.Split("|");
 
-            if (parts.Length == 3)
+            if (parts.Length == 4)
             {
                 Entry newEntry = new Entry
                 {
                     _date = parts[0],
-                    _promptText = parts [1],
-                    _entryText = parts [2]
+                    _moodTracker = parts[1],
+                    _promptText = parts [2],
+                    _entryText = parts [3]
 
                 };
                 _entries.Add(newEntry);
