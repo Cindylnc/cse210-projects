@@ -31,6 +31,10 @@ public class Journal
     public void LoadFromFile (string fileName)
     {
         string [] lines = File.ReadAllLines(fileName);
+
+        //avoid duplicates
+        _entries.Clear();
+        
         foreach (string line in lines)
         {
             string [] parts = line.Split("|");
