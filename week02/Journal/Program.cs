@@ -8,11 +8,31 @@ class Program
     {
         Console.WriteLine("Hello World! This is the Journal Project.");
      
-        PromptGenerator ooo = new PromptGenerator();
-        string randomPrompt = ooo.GetRandomPrompt();
+
+        //Create prompGenerator object
+        PromptGenerator promptGenerator = new PromptGenerator();
+        string randomPrompt = promptGenerator.GetRandomPrompt();
         Console.WriteLine(randomPrompt);
+        string userResponse = Console.ReadLine();
+        
+        //Get the current Date
+        DateTime theCurrentDate = DateTime.Now;
+        string dateText = theCurrentDate.ToShortDateString();
 
+        //Create a new Entry object
+        Entry newEntry = new Entry
+        {
+            _date = dateText,
+            _promptText = randomPrompt,
+            _entryText = userResponse,
+        };
 
+        //Create journal object
+        Journal journal = new Journal ();
+        journal.AddEntry(newEntry);
+        
+
+        
         Console.WriteLine("\nWelcome to the Journal Program!");
         string menu;
         do
