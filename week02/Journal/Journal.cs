@@ -31,11 +31,23 @@ public class Journal
         string[] lines = System.IO.File.ReadAllLines (file);
         foreach (string line in lines)
         {
+            Console.WriteLine(line);
             string[] parts = line.Split("|");
-            string _date = parts[0];
-            string _promptText = parts[1];
-            string _entryText = parts[2];
+            if (parts.Length == 3)
+            {
+                Console.WriteLine();                
+                 _entries.Add(new Entry
+                {
+                    _date = parts[0],
+                    _promptText = parts[1],
+                    _entryText = parts[2],
+                });
+               
+            }
+            
+
         };
+        
     
     }
 
