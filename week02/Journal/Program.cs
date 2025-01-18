@@ -74,10 +74,12 @@ class Program
                 string fileName = Console.ReadLine();
                 journal.LoadFromFile(fileName);
             }
+
             else if (menu == "5")
             {
                 Console.WriteLine("See ya next time!");
             }
+            
             else
             {
                 Console.WriteLine("That's not an option");
