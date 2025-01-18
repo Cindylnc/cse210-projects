@@ -1,5 +1,5 @@
-//Exceeding Requirements: I saved additional infomartion in the Journal entry. 
-//I created a Modd tracker that records from a scale from 1 to 5 the mood of the user. 
+//Exceeding Requirements: I saved additional information in the Journal entry. 
+//I created a Mood tracker that records from a scale from 1 to 5 the mood of the user. 
 
 
 using System;
