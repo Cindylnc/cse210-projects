@@ -55,7 +55,7 @@ public class Journal
                     _promptText = parts[1],  
                     _entryText = parts[2],
                 };
-                _entries.Add(newEntry);
+                //_entries.Add(newEntry);
             }
         }
 
