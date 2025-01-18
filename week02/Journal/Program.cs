@@ -1,3 +1,7 @@
+//Exceeding Requirements: I saved additional infomartion in the Journal entry. 
+//I created a Modd tracker that records from a scale from 1 to 5 the mood of the user. 
+
+
 using System;
 using System.Diagnostics;
 using System.IO.Enumeration;
