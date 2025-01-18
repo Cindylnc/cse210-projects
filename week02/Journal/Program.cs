@@ -62,7 +62,7 @@ class Program
             //SAVE
             else if (menu == "3")
             {
-                Console.WriteLine("Enter the filename to save the journal:");
+                Console.Write("Enter the filename to save the journal: ");
                 string fileName = Console.ReadLine();
                 journal.SaveToFile(fileName);
             }
@@ -70,7 +70,7 @@ class Program
             //LOAD
             else if (menu == "4")
             {
-                Console.WriteLine("Enter the filename to load the entries from:");
+                Console.Write("Enter the filename to load the entries from: ");
                 string fileName = Console.ReadLine();
                 journal.LoadFromFile(fileName);
             }

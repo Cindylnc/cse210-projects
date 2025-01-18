@@ -31,7 +31,7 @@ public class Journal
         string[] lines = System.IO.File.ReadAllLines (file);
         foreach (string line in lines)
         {
-            Console.WriteLine(line);
+            /*Console.WriteLine(line);
             string[] parts = line.Split("|");
             if (parts.Length == 3)
             {
@@ -40,13 +40,29 @@ public class Journal
                 {
                     _date = parts[0],
                     _promptText = parts[1],
+                    
                     _entryText = parts[2],
                 });
                
-            }
-            
+            }*/
 
-        };
+            string[] parts = line.Split("|");
+            if (parts.Length == 3)
+            {
+                Entry newEntry = new Entry
+                {
+                    _date = parts[0],
+                    _promptText = parts[1],  
+                    _entryText = parts[2],
+                };
+                _entries.Add(newEntry);
+            }
+        }
+
+        foreach (Entry entry in _entries)
+        {
+            entry.Display();
+        }
         
     
     }
