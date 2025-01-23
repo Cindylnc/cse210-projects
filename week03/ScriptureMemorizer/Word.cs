@@ -11,15 +11,15 @@ public class Word // Keeps track of a single word and whether it is shown or hid
       
     public void Hide()
     {
-
+        _isHidden = true;
     }
     public void Show()
     {
-
+        _isHidden = false;
     }
     public bool IsHidden()
     {
-        return false;
+        return _isHidden;
     }
     public string GetDisplayText()
     {  //Should return the word if visible or return underscores ____ if hidden
