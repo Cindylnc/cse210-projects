@@ -8,32 +8,48 @@ public class Scripture{  // Keeps track of both the reference and the text of th
         _reference = reference;
         _words = new List<Word>();
 
-        foreach (string word in text.Split(" "))
+        foreach (string word in text.Split(' '))
         {
             _words.Add (new Word(word));
         }
     }
     public void HideRandomWords (int numberToHide)
-    { // Set the state of a randomly selected group of words to be hidden
-    // Need to find a set of visible words
-    //Randomly select "numberToHide" of those words (if visible function/ loops or if statements) 
-    // Use the Hide function
-
+    { 
         Random random = new Random();
-        List<Word> visibleWords = new List<Word>();
+        //List<Word> visibleWords = new List<Word>();
+        for (int i=0; i < numberToHide; i++)
+        {
+            int index = random.Next(_words.Count);
+            while (_words[index].IsHidden())
+            {
+                index = random.Next(_words.Count);
+            }
+            _words[index].Hide();
+        }
 
     }
     public string GetDisplayText ()
     { //Display reference, all words
-        return "";
+        string scriptureText = "";
+        foreach (Word word in _words)
+        {
+            scriptureText +=  word.GetDisplayText() + " ";
+        }
+        return $"{_reference.GetDisplayText()} {scriptureText.Trim()}";
     }
     public bool IsCompletelyHidden()
     {
-        return false;
+        foreach (Word word in _words)
+        {
+            if (!word.IsHidden())
+            {
+                return false;
+            }
+        }
+        return true;
     }
 
 
-    
 
 
 
