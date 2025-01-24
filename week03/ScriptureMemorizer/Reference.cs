@@ -22,10 +22,15 @@ public class Reference { // Keeps track of the book, chapter, and verse informat
     }
 
     public string GetDisplayText()
-    { //two ways to return the string;
-    // 1 Nephi 3:7
-    // 1 Nephi 3:7-9
-        return  "";
+    { 
+        if (_verse == _endVerse)
+        {
+            return $"{_book} {_chapter}:{_verse}";
+        }
+        else
+        {
+            return $"{_book} {_chapter}:{_verse}-{_endVerse}";
+        }
     }
 
 

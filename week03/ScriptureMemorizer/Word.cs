@@ -22,8 +22,17 @@ public class Word // Keeps track of a single word and whether it is shown or hid
         return _isHidden;
     }
     public string GetDisplayText()
-    {  //Should return the word if visible or return underscores ____ if hidden
-        return _text;
+    {  
+        if (_isHidden)
+        {
+            return new string ('_', _text.Length);
+        }
+        else
+        {
+            return _text;
+        }
+      
+        
     }
 
 }

@@ -5,13 +5,22 @@ public class Scripture{  // Keeps track of both the reference and the text of th
     public Scripture (Reference reference, string text)
     {   //split up the words in text and store each as a word object in the list _words
     //Split and loop through each word. And create word objext and put it into _words
+        _reference = reference;
+        _words = new List<Word>();
 
+        foreach (string word in text.Split(" "))
+        {
+            _words.Add (new Word(word));
+        }
     }
     public void HideRandomWords (int numberToHide)
     { // Set the state of a randomly selected group of words to be hidden
     // Need to find a set of visible words
     //Randomly select "numberToHide" of those words (if visible function/ loops or if statements) 
     // Use the Hide function
+
+        Random random = new Random();
+        List<Word> visibleWords = new List<Word>();
 
     }
     public string GetDisplayText ()
