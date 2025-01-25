@@ -1,10 +1,9 @@
-public class Scripture{  // Keeps track of both the reference and the text of the scripture. Can hide words and get the rendered display of the text.
+public class Scripture{  // Keeps track of both the reference and the text of the scripture. 
     private Reference _reference;
     private List<Word> _words;
 
     public Scripture (Reference reference, string text)
-    {   //split up the words in text and store each as a word object in the list _words
-    //Split and loop through each word. And create word objext and put it into _words
+    {   
         _reference = reference;
         _words = new List<Word>();
 
@@ -16,17 +15,25 @@ public class Scripture{  // Keeps track of both the reference and the text of th
     public void HideRandomWords (int numberToHide)
     { 
         Random random = new Random();
-        //List<Word> visibleWords = new List<Word>();
-        for (int i=0; i < numberToHide; i++)
+        //Create list of
+        List<Word> visibleWords = new List<Word>();
+        foreach (Word word in _words)
         {
-            int index = random.Next(_words.Count);
-            while (_words[index].IsHidden())
+            if (!word.IsHidden())
             {
-                index = random.Next(_words.Count);
+                visibleWords.Add(word);
             }
-            _words[index].Hide();
         }
 
+        //Limit number of words to hide to number of visible words
+        int wordsToHide = Math.Min(numberToHide, visibleWords.Count);
+
+        for (int i=0; i <wordsToHide; i++)
+        {
+            int index = random.Next(visibleWords.Count);
+            visibleWords[index].Hide();
+            visibleWords.RemoveAt(index); //Removed from list so it's not picked twice*/
+        }
     }
     public string GetDisplayText ()
     { //Display reference, all words
