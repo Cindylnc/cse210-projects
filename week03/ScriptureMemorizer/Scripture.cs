@@ -32,7 +32,7 @@ public class Scripture{  // Keeps track of both the reference and the text of th
         {
             int index = random.Next(visibleWords.Count);
             visibleWords[index].Hide();
-            visibleWords.RemoveAt(index); //Removed from list so it's not picked twice*/
+            visibleWords.RemoveAt(index); //Removed from list so it's not picked twice
         }
     }
     public string GetDisplayText ()
