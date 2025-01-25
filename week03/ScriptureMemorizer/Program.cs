@@ -1,3 +1,9 @@
+/*Exceeding Requirements: I added the logic to ensure my program randomly selects and hides words 
+only from those that are not already hidden. This logic was added in my Scripture.cs file, within the HideRandomWords method. 
+In this method, the program filters out words that are already hidden, creating a new list of only visible words. 
+Then, it randomly selects from this list to hide the specified number of words.*/
+
+
 using System;
 using System.Diagnostics;
 using System.Net.Http.Headers;
