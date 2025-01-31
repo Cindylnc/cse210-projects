@@ -1,3 +1,5 @@
+using System.Data;
+
 public class Video 
 {
     private string _title;
@@ -8,12 +10,15 @@ public class Video
 
     public Video(string title, string author, int length)
     {
-
+        _title = title;
+        _author = author;
+        _length = length;
+        _comments = new List<Comment>();
     }
 
     public void AddComment(Comment comment)
     {
-
+        _comments.Add(comment);
     }
     public int GetNumberOfComments()
     {
@@ -21,7 +26,17 @@ public class Video
     }
     public void Diplay()
     {
-        
+        Console.WriteLine($"Title: {_title}");
+        Console.Write($"Author: {_author}   ");
+        Console.WriteLine($" -   Length: {_length}");
+        Console.WriteLine($"Number of Comments: {GetNumberOfComments}");
+
+        Console.WriteLine("Comments:");
+        foreach (Comment comment in _comments)
+        {
+            Console.WriteLine($" - {comment.Display()}");
+        }
+        Console.WriteLine();
     }
 
 }
