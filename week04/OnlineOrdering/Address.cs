@@ -6,16 +6,21 @@ public class Address
     private string _country;
 
 
-    public Address(string street, string city, string state)
+    public Address(string street, string city, string state, string stateOrProvince, string country)
     {
+        _street = street;
+        _city = city;
+        _stateOrProvince = stateOrProvince;
+        _country = country;
     }
+
 
     public bool IsInUSA()
     {
-        return _city == ""; 
+        return _country.ToLower() == "usa";
     }
     public string GetAddress()
     {
-        return ("");
+        return $"{_street}\n{_city}, {_stateOrProvince}\n{_country}";
     }
 }
