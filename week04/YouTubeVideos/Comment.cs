@@ -12,7 +12,7 @@ public class Comment
     
     public string Display()
     {
-        return _name;
+        return $"{_name}: {_text}";
     }
 
 }
