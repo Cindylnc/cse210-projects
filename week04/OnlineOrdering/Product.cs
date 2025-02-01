@@ -6,7 +6,7 @@ public class Product
     private int _quantity;
 
 
-    public Product (string productName, int productId, double price, int quantity)
+    public Product(string productName, int productId, double price, int quantity)
     {
         _productName = productName;
         _productId = productId;
@@ -20,7 +20,7 @@ public class Product
 
     public string GetProductInfo()
     {
-        return $"{_productName} (ID:m{_productId})";
+        return $"{_productName} (ID: {_productId})";
     }
 
 }

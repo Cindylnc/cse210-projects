@@ -29,12 +29,19 @@ public class Order
 
     public double GetShippingCost()
     {
-        return _customer.IsInUSA()  ? 5 : 35;
+        if (_customer.IsInUSA())
+        {
+            return 5;
+        }
+        else
+        {
+            return 35;
+        }
     }
 
     public string GetPackingLabel()
     {
-        string label = "Packing Label:\n";
+        string label = "PACKING LABEL:\n";
         foreach (Product product in _products)
         {
             label += $"- {product.GetProductInfo()}\n";
@@ -44,7 +51,7 @@ public class Order
 
     public string GetShippingLabel()
     {
-        return $"Shipping Label:\n{_customer.GetName()}\n{_customer.GetAddress()}";
+        return $"SHIPPING LABEL:\n{_customer.GetName()}\n{_customer.GetAddress()}\n";
     }
 
 
