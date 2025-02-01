@@ -26,12 +26,12 @@ public class Video
     }
     public void Diplay()
     {
-        Console.WriteLine($"Title: {_title}");
-        Console.Write($"Author: {_author}   ");
-        Console.WriteLine($" -   Length: {_length}");
-        Console.WriteLine($"Number of Comments: {GetNumberOfComments}");
+        Console.WriteLine($"TITLE: {_title}");
+        Console.WriteLine($"AUTHOR: {_author}   ");
+        Console.WriteLine($"LENGTH: {_length}");
+        Console.WriteLine($"NUMBER OF COMMENTS: {GetNumberOfComments()}");
 
-        Console.WriteLine("Comments:");
+        Console.WriteLine("COMMENTS:");
         foreach (Comment comment in _comments)
         {
             Console.WriteLine($" - {comment.Display()}");
