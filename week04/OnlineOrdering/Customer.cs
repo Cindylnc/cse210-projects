@@ -6,16 +6,23 @@ public class Customer
 
     public Customer (string customerName, Address address)
     {
-
+        _customerName = customerName;
+        _address = address;
     }
 
     public bool IsInUSA()
     {
-        return ("");
+        return _address.IsInUSA();
     }
     public string GetAddress()
     {
-        return ("");
+        return _address.GetAddress();
+    }
+
+    public string GetName()
+    {
+        return _customerName;
+    }
 
 
 }

@@ -6,15 +6,21 @@ public class Product
     private int _quantity;
 
 
-    public Product (string productName, int productId)
+    public Product (string productName, int productId, double price, int quantity)
     {
-
+        _productName = productName;
+        _productId = productId;
+        _price = price;
+        _quantity = quantity;
     }
     public double GetTotalCost()
     {
-        return == "";
+        return _price * _quantity;
     }
 
-
+    public string GetProductInfo()
+    {
+        return $"{_productName} (ID:m{_productId})";
+    }
 
 }
