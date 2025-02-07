@@ -4,11 +4,10 @@ public class Activity
     private string _description;
     private int _duration;
 
-    public Activity(string name, string description, int duration)
+    public Activity(string name, string description)
     {
         _name = name;
         _description = description;
-        _duration = duration;
     }
 
     public void DisplayStartingMessage()
@@ -29,7 +28,7 @@ public class Activity
 
     public void ShowCountDown(int seconds)
     {
-        
+
     }
 
 }
