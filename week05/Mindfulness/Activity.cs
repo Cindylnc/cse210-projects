@@ -19,7 +19,7 @@ public class Activity
 
        _duration = int.Parse(Console.ReadLine());
        Console.WriteLine("Prepare to begin..");
-       ShowSpinner(10);
+       ShowSpinner(3);
 
     }
 
