@@ -16,25 +16,38 @@ public class ReflectingActivity : Activity
         "What did you learn about yourself?"
     };
 
+
+    public ReflectingActivity()
+       : base("Reflection Activity", "This activity helps you reflect on moments of strength and resilience"){}
+
     public void Run()
     {
+        DisplayStartingMessage();
+        Console.WriteLine("Prompt: " + GetRandomPrompt());
+        ShowSpinner(3);
 
+        DateTime endTime = DateTime.Now.AddSeconds(_duration);
+        while (DateTime.Now < endTime)
+        {
+            Console.WriteLine("Question: " + GetRandomQuestion());
+            ShowSpinner(3);
+        }
+
+        DisplayEndingMessage();
     }
 
     public string GetRandomPrompt()
     {
-
+        Random random = new Random();
+        return _prompts[random.Next(_prompts.Count)];
     }
     public string GetRandomQuestion()
     {
-
+        Random random = new Random();
+        return _questions[random.Next(_questions.Count)];
     }
-    public void DisplayPrompt()
-    {
-
-    }
-    public void DisplayQuestions()
-    {
-
-    }
+    //public void DisplayPrompt()
+    //{}
+    //public void DisplayQuestions()
+    //{}
 }
