@@ -32,7 +32,20 @@ public class Activity
 
     public void ShowSpinner(int seconds)
     {
-        for (int i = 0; i < seconds; i++)
+
+
+        char[] spinner = {'/','-','\\','|'};
+        int i = 0;
+        
+        DateTime endTime = DateTime.Now.AddSeconds(seconds);
+        
+        while (DateTime.Now < endTime)
+        {
+            Console.Write(spinner[i]);
+            Thread.Sleep(300);
+            Console.Write("\b\b");
+            i = (i + 1) % 4;
+        }        /*for (int i = 0; i < seconds; i++)
         {
             Console.WriteLine("/");
             Thread.Sleep(300);
@@ -49,7 +62,7 @@ public class Activity
             Console.WriteLine("|");
             Thread.Sleep(300);
             Console.Write("\b \b");
-        }
+        }*/
         
     }
 
