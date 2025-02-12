@@ -45,25 +45,7 @@ public class Activity
             Thread.Sleep(300);
             Console.Write("\b\b");
             i = (i + 1) % 4;
-        }        /*for (int i = 0; i < seconds; i++)
-        {
-            Console.WriteLine("/");
-            Thread.Sleep(300);
-            Console.Write("\b \b");
-
-            Console.WriteLine("-");
-            Thread.Sleep(300);
-            Console.Write("\b \b");
-
-            Console.WriteLine("\\");
-            Thread.Sleep(300);
-            Console.Write("\b \b");
-
-            Console.WriteLine("|");
-            Thread.Sleep(300);
-            Console.Write("\b \b");
-        }*/
-        
+        }        
     }
 
 
