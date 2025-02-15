@@ -10,9 +10,14 @@ public class SimpleGoal: Goal
         _isComplete = false;
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-        _isComplete = true;
+        if (!_isComplete)
+        {
+            _isComplete = true;
+            return GetGoalPoints();
+        }
+        return 0;
     }
 
     public override bool IsComplete()
@@ -20,10 +25,14 @@ public class SimpleGoal: Goal
         return _isComplete;
     }
 
+    public override string GetDetailsString()
+    {
+        return $"[ {(IsComplete() ? "X" : " ")} ] {GetGoalName()} ({GetGoalDescription()})";
+    }
 
     public override string GetStringRepresentation()
     {
-        return $"SimpleGoal| {_goalName} | {_goalDescription}|{_goalPoints}|{_isComplete}";
+        return $"SimpleGoal|{GetGoalName()}|{GetGoalDescription()}|{GetGoalPoints()}|{_isComplete}";
     }
 
 }
