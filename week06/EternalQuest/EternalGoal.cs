@@ -1,29 +1,24 @@
 public class EternalGoal: Goal
 {
-    public EternalGoal(string goalName, string goalDescription, int goalPoints) : base(goalName, goalDescription, goalPoints)
+    public EternalGoal(string goalName, string goalDescription, int goalPoints) 
+        : base(goalName, goalDescription, goalPoints)
     {
         
     }
 
-    public void RecordEvent()
+    public override void RecordEvent()
     {
-
+        Console.WriteLine($"Progress made on eternal goal: {_goalName}");
     }
 
-    public bool IsComplete()
+    public override bool IsComplete()
     {
         return false;
     }
 
-    public string GetStringRepresentation()
+    public override string GetStringRepresentation()
     {
-        return "";
+        return $"Eternal Goal| {_goalName}|{_goalDescription}|{_goalPoints}";
     }
-
-
-
-
-
-
 
 }

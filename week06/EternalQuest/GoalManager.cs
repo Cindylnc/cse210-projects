@@ -1,11 +1,12 @@
 public class GoalManager
 {
-    List<Goal> goals = new List<Goal>();
+    private List<Goal> _goals;
     private int _score;
 
-    public GoalManager(int score)
+    public GoalManager()
     {
-        _score = score;
+        _goals = new List<Goal>();
+        _score = 0;
     }
 
     public void Start()
@@ -14,7 +15,7 @@ public class GoalManager
     }
     public void DisplayPlayerInfo()
     {
-
+        Console.WriteLine($"Current Score: {_score}");
     }
     public void ListGoalNames ()
     {
@@ -22,15 +23,22 @@ public class GoalManager
     }
     public void ListGoalDetails ()
     {
-
+        foreach (Goal goal in _goals)
+        {
+            Console.WriteLine(goal.GetDetailsString());
+        }
     }
-    public void CreateGoal() 
+    public void CreateGoal(Goal newGoal) 
     {
-
+        _goals.Add(newGoal);
     }
-    public void RecordEvent()
+    public void RecordEvent(int goalIndex)
     {
-
+        if(goalIndex >= 0 && goalIndex < _goals.Count)
+        {
+            _goals[goalIndex].RecordEvent();
+            _score += _goals[goalIndex].IsComplete() ? _goals[goalIndex]._goalPoints : 0;
+        }
     }
     public void SaveGoals()
     {
@@ -41,7 +49,7 @@ public class GoalManager
 
     }
 
-    
+
 
 
 
