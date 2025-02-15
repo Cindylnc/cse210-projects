@@ -37,7 +37,7 @@ public class GoalManager
         if(goalIndex >= 0 && goalIndex < _goals.Count)
         {
             _goals[goalIndex].RecordEvent();
-            _score += _goals[goalIndex].IsComplete() ? _goals[goalIndex]._goalPoints : 0;
+            _score += _goals[goalIndex].IsComplete() ? _goals[goalIndex].GetPoints() : 0;
         }
     }
     public void SaveGoals()

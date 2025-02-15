@@ -12,6 +12,11 @@ public abstract class Goal
         _goalPoints = goalPoints;
     }
 
+    public int GetPoints()
+    {
+        return _goalPoints;
+    }
+
     public abstract void RecordEvent();
     public abstract bool IsComplete();
     public abstract string GetStringRepresentation();
