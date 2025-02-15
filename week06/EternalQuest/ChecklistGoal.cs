@@ -7,8 +7,8 @@ public class ChecklistGoal : Goal
         : base(goalName, goalDescription, goalPoints)
     {
         _amountCompleted = 0;
-        _target = 0;
-        _bonus = _bonus;
+        _target = target;
+        _bonus = bonus;
     }
 
     public override void RecordEvent()
