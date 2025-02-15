@@ -6,9 +6,9 @@ public class EternalGoal: Goal
         
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-        Console.WriteLine($"Progress made on eternal goal: {_goalName}");
+        return GetGoalPoints();
     }
 
     public override bool IsComplete()
@@ -16,9 +16,15 @@ public class EternalGoal: Goal
         return false;
     }
 
+    public override string GetDetailsString()
+    {
+        return $"[**] {GetGoalName()} ({GetGoalDescription()})";
+    }
+
+
     public override string GetStringRepresentation()
     {
-        return $"Eternal Goal| {_goalName}|{_goalDescription}|{_goalPoints}";
+        return $"Eternal Goal|{GetGoalName}|{GetGoalDescription()}|{GetGoalPoints()}";
     }
 
 }

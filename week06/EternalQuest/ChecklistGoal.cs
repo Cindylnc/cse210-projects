@@ -1,34 +1,54 @@
 public class ChecklistGoal : Goal
 {
-    private int _amountCompleted;
-    private int _target;
-    private int _bonus;
-    public ChecklistGoal(string goalName, string goalDescription, int goalPoints, int target, int bonus) 
+    private int _timesCompleted;
+    private int _targetCount;
+    private int _bonusPoints;
+    public ChecklistGoal(string goalName, string goalDescription, int goalPoints, int targetCount, int bonusPoints) 
         : base(goalName, goalDescription, goalPoints)
     {
-        _amountCompleted = 0;
-        _target = target;
-        _bonus = bonus;
+        _timesCompleted = 0;
+        _targetCount = targetCount;
+        _bonusPoints = bonusPoints;
     }
 
-    public override void RecordEvent()
+    public int GetCurrentCount()
     {
+        return _timesCompleted;
+    }
+    public int GetTargetCount()
+    {
+        return _targetCount;
+    }
+    public int GetBonusPoints()
+    {
+        return _bonusPoints;
+    }
 
+
+
+    public override int RecordEvent()
+    {
+        _timesCompleted ++;
+        if (_timesCompleted >= _targetCount)
+        {
+            return GetGoalPoints() + _bonusPoints;
+        }
+        return GetGoalPoints();
     }
 
     public override bool IsComplete()
     {
-        return _amountCompleted >= _target;
-    }
-
-    public override string GetStringRepresentation()
-    {
-        return $"ChecklistGoal | {_goalDescription} | {_goalPoints}|{_amountCompleted}/{_target}|{_bonus}";
+        return _timesCompleted >= _targetCount;
     }
 
     public override string GetDetailsString()
     {
-        return base.GetDetailsString() + $" - Completed {_amountCompleted}/{_target} times";
+        return $"[ {(IsComplete() ? "X" : " ")} ] {GetGoalName()}  ({GetGoalDescription()}) -- Currently completed: {_timesCompleted}/{_targetCount}";
+    }
+
+    public override string GetStringRepresentation()
+    {
+        return $"ChecklistGoal| {GetGoalName()}|{GetGoalDescription()}|{GetGoalPoints()}|{_targetCount}|{_timesCompleted}";
     }
 
 
