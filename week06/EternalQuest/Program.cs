@@ -24,6 +24,52 @@ class Program
 
             string choice = Console.ReadLine();
 
+            if (choice == "1")
+            {
+                Console.WriteLine("\nSlect Goal Type:");
+                Console.WriteLine("1. Simple Goal");
+                Console.WriteLine("2. Eternal Goal");
+                Console.WriteLine("3. Checklist Goal");
+                Console.WriteLine("Enter the number for goal type: ");
+
+                string goalType = Console.ReadLine();
+
+                Console.WriteLine("Goal name:");
+                string name = Console.ReadLine();
+
+                Console.WriteLine("Goal description:");
+                string description = Console.ReadLine();
+
+                Console.WriteLine("Points:");
+                int points = int.Parse(Console.ReadLine());
+
+                if (goalType == "1")
+                {
+                    goalManager.AddGoal(new SimpleGoal(name, description,points));
+                }
+                else if (goalType == "2")
+                {
+                    goalManager.AddGoal(new EternalGoal(name, description,points));
+                }
+                else if (goalType == "3")
+                {
+                    Console.Write("Target count: ");
+                    int targetCount = int.Parse(Console.ReadLine());
+
+                    Console.Write("Bonus Points: ");
+                    int bonusPoints = int.Parse(Console.ReadLine());
+
+                    goalManager.AddGoal(new ChecklistGoal (name, description, points, targetCount, bonusPoints));
+
+                }
+                else
+                {
+                    Console.WriteLine("Invalid selection. Enter 1, 2, or 3");
+                }
+
+
+            }
+
         }
     }
 }
