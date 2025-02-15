@@ -1,45 +1,48 @@
 public class GoalManager
 {
     private List<Goal> _goals;
-    private int _score;
+    private int _totalPoints;
 
     public GoalManager()
     {
         _goals = new List<Goal>();
-        _score = 0;
+        _totalPoints = 0;
     }
 
-    public void Start()
+    
+    public void AddGoal(Goal goal) 
     {
+        _goals.Add(goal);
+    }
 
-    }
-    public void DisplayPlayerInfo()
-    {
-        Console.WriteLine($"Current Score: {_score}");
-    }
-    public void ListGoalNames ()
-    {
-
-    }
-    public void ListGoalDetails ()
+    public void RecordEvent(string goalName)
     {
         foreach (Goal goal in _goals)
         {
-            Console.WriteLine(goal.GetDetailsString());
+            if (goal.GetGoalName() == goalName)
+            {
+                _totalPoints += goal.RecordEvent();
+                return;
+            }
         }
+        Console.WriteLine($"Goal not found x_x");
     }
-    public void CreateGoal(Goal newGoal) 
+
+
+    public void ListGoal()
     {
-        _goals.Add(newGoal);
-    }
-    public void RecordEvent(int goalIndex)
-    {
-        if(goalIndex >= 0 && goalIndex < _goals.Count)
+        for (int i = 0; i <_goals.Count; i++)
         {
-            _goals[goalIndex].RecordEvent();
-            _score += _goals[goalIndex].IsComplete() ? _goals[goalIndex].GetPoints() : 0;
+            Console.WriteLine($"{i = 1}. {_goals[i].GetDetailsString}");
         }
     }
+
+    
+    public void DisplayTotalPoints()
+    {
+        Console.WriteLine ($"Total Points: {_totalPoints}");
+    }
+
     public void SaveGoals()
     {
 
@@ -48,6 +51,18 @@ public class GoalManager
     {
 
     }
+
+
+
+    /*public void ListGoalDetails ()
+    {
+        foreach (Goal goal in _goals)
+        {
+            Console.WriteLine(goal.GetDetailsString());
+        }
+    }*/
+
+
 
 
 
