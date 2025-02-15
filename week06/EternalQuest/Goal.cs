@@ -12,22 +12,14 @@ public abstract class Goal
         _goalPoints = goalPoints;
     }
 
-    public void RecordEvent(string goalName)
-    {
-        _goalName = goalName;
-    }
-
-    public bool IsComplete()
-    {
-        return true;
-    }
-
-    public string GetDetailsString()
-    {
-        return _goalDescription;
-    }
-
+    public abstract void RecordEvent();
+    public abstract bool IsComplete();
     public abstract string GetStringRepresentation();
+
+    public virtual string GetDetailsString()
+    {
+        return $"{_goalName} - {_goalDescription} ({_goalPoints} points)";
+    }
 
 
 
