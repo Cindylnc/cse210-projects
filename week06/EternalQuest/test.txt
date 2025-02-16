@@ -1,3 +1,3 @@
-SimpleGoal|aa|aaaaaaa|10|False
-Eternal Goal|bb|bbbbbbb|20
-ChecklistGoal| cc|ccccccc|30|2|0
+SimpleGoal|aa|aaaaaaaa|10|False
+EternalGoal|b|bbbbbbb|20
+ChecklistGoal| cc|cccccc|30|2|0
