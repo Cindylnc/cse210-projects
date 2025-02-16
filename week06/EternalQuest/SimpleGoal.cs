@@ -27,7 +27,7 @@ public class SimpleGoal: Goal
 
     public override string GetDetailsString()
     {
-        return $"[ {(IsComplete() ? "X" : " ")} ] {GetGoalName()} ({GetGoalDescription()})";
+        return $"[{(IsComplete() ? "X" : " ")}] {GetGoalName()} ({GetGoalDescription()})";
     }
 
     public override string GetStringRepresentation()

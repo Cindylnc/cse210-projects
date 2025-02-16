@@ -43,7 +43,7 @@ public class ChecklistGoal : Goal
 
     public override string GetDetailsString()
     {
-        return $"[ {(IsComplete() ? "X" : " ")} ] {GetGoalName()}  ({GetGoalDescription()}) -- Currently completed: {_timesCompleted}/{_targetCount}";
+        return $"[{(IsComplete() ? "X" : " ")}] {GetGoalName()}  ({GetGoalDescription()}) -- Currently completed: {_timesCompleted}/{_targetCount}";
     }
 
     public override string GetStringRepresentation()

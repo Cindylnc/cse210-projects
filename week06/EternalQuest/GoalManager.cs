@@ -62,8 +62,12 @@ public class GoalManager
         Console.WriteLine("\n**List of Goals** ");
         for (int i=0; i < _goals.Count; i++)
         {
-            Console.WriteLine($"{i+1}. {_goals[i].GetGoalName()}");
+            Console.WriteLine($"{i+1}. {_goals[i].GetDetailsString()}");
         }
+
+
+
+        
     }
 
     

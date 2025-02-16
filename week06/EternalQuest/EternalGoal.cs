@@ -18,7 +18,7 @@ public class EternalGoal: Goal
 
     public override string GetDetailsString()
     {
-        return $"[**] {GetGoalName()} ({GetGoalDescription()})";
+        return $"[-] {GetGoalName()} ({GetGoalDescription()})";
     }
 
 

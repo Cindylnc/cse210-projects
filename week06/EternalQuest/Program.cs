@@ -53,10 +53,10 @@ class Program
                 }
                 else if (goalType == "3")
                 {
-                    Console.Write("Target count: ");
+                    Console.Write("How many times does this goal need to be accomplished for a bonus?  ");
                     int targetCount = int.Parse(Console.ReadLine());
 
-                    Console.Write("Bonus Points: ");
+                    Console.Write("What is the bonus for accomplishing it that many times? ");
                     int bonusPoints = int.Parse(Console.ReadLine());
 
                     goalManager.AddGoal(new ChecklistGoal (name, description, points, targetCount, bonusPoints));
@@ -87,6 +87,16 @@ class Program
             }
             else if (choice == "5")
             {
+                goalManager.ListGoals();
+
+                Console.Write("Which goal did you accomplish? (Enter number): ");
+                if (int.TryParse(Console.ReadLine(), out int goalIndex))
+                {
+                    goalManager.RecordEvent(goalIndex - 1);
+                }
+                else{
+                    Console.Write("Invalid input. Please enter a number.");
+                }
                 
             }
             else if (choice == "6")
