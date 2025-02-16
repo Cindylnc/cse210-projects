@@ -109,7 +109,7 @@ public class GoalManager
     }
     public void LoadGoals(string filename)
     {
-        _goals.Clear();
+        
         using(StreamReader reader = new StreamReader(filename))
         {
             string line;
@@ -117,15 +117,15 @@ public class GoalManager
             {
                 string [] parts = line.Split('|');
                 string type = parts [0];
-                if (type == "1")
+                if (type == "SimpleGoal")
                 {
                     _goals.Add( new SimpleGoal(parts[1], parts[2], int.Parse(parts[3])));
                 }
-                else if (type == "2")
+                else if (type == "EternalGoal")
                 {
                     _goals.Add(new EternalGoal(parts[1], parts[2], int.Parse(parts[3])));
                 }
-                else if (type == "3")
+                else if (type == "ChecklistGoal")
                 {
                     _goals.Add(new ChecklistGoal(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), int.Parse(parts[5])));
                 }

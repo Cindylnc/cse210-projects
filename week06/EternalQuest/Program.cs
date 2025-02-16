@@ -75,7 +75,7 @@ class Program
             }
             else if (choice == "3")
             {
-                Console.WriteLine("Enter filename to save: ");
+                Console.Write("Enter filename to save: ");
                 string saveFile = Console.ReadLine();
                 goalManager.SaveGoals(saveFile);
             }
