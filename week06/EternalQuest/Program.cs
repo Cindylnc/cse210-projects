@@ -12,7 +12,7 @@ class Program
 
         while (true)
         {
-            Console.WriteLine($"You have {goalManager.TotalPoints} points.\n");
+            Console.WriteLine($"\nYou have {goalManager.GetTotalPoints()} points.\n");
             Console.WriteLine("Meny Options:");
             Console.WriteLine("1. Create New Goal");
             Console.WriteLine("2. List Goals");
@@ -34,13 +34,13 @@ class Program
 
                 string goalType = Console.ReadLine();
 
-                Console.WriteLine("Goal name:");
+                Console.Write("What is the goal name? ");
                 string name = Console.ReadLine();
 
-                Console.WriteLine("Goal description:");
+                Console.Write("What is the goal description? ");
                 string description = Console.ReadLine();
 
-                Console.WriteLine("Points:");
+                Console.Write("How many points would you like to associate with this goal?");
                 int points = int.Parse(Console.ReadLine());
 
                 if (goalType == "1")

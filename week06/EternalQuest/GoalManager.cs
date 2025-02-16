@@ -9,13 +9,18 @@ public class GoalManager
         _totalPoints = 0;
     }
 
+    public int GetTotalPoints()
+    {
+        return _totalPoints;
+    }
+
     
     public void AddGoal(Goal goal) 
     {
         _goals.Add(goal);
     }
 
-    public void RecordEvent(string goalName)
+    /*public void RecordEvent(string goalName)
     {
         foreach (Goal goal in _goals)
         {
@@ -26,14 +31,38 @@ public class GoalManager
             }
         }
         Console.WriteLine($"Goal not found x_x");
+    }*/
+
+    public void RecordEvent(int goalIndex)
+    {
+        if (goalIndex >= 0 && goalIndex < _goals.Count)
+        {
+            _totalPoints += _goals[goalIndex].RecordEvent();
+        }
+        else
+        {
+            Console.WriteLine("Invalid goal selection.");
+        }
     }
 
 
-    public void ListGoal()
+    public void ListGoals()
     {
-        for (int i = 0; i <_goals.Count; i++)
+        /*for (int i = 0; i <_goals.Count; i++)
         {
             Console.WriteLine($"{i = 1}. {_goals[i].GetDetailsString}");
+        }*/
+
+        if (_goals.Count == 0)
+        {
+            Console.WriteLine("The goals are: ");
+            return;
+        }
+
+        Console.WriteLine("The goals are:");
+        for (int i=0; i < _goals.Count; i++)
+        {
+            Console.WriteLine($"{i+1}. {_goals[i].GetGoalName()}");
         }
     }
 
