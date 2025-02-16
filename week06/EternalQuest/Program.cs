@@ -87,7 +87,9 @@ class Program
             }
             else if (choice == "5")
             {
-                goalManager.ListGoals();
+
+                goalManager.RecordEvent();
+                /*goalManager.ListGoals();
 
                 Console.Write("Which goal did you accomplish? (Enter number): ");
                 if (int.TryParse(Console.ReadLine(), out int goalIndex))
@@ -96,7 +98,7 @@ class Program
                 }
                 else{
                     Console.Write("Invalid input. Please enter a number.");
-                }
+                }*/
                 
             }
             else if (choice == "6")
