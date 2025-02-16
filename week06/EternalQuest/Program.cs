@@ -26,11 +26,11 @@ class Program
 
             if (choice == "1")
             {
-                Console.WriteLine("\nSlect Goal Type:");
+                Console.WriteLine("\nSelect Goal Type:");
                 Console.WriteLine("1. Simple Goal");
                 Console.WriteLine("2. Eternal Goal");
                 Console.WriteLine("3. Checklist Goal");
-                Console.WriteLine("Enter the number for goal type: ");
+                Console.Write("Enter the number for goal type: ");
 
                 string goalType = Console.ReadLine();
 
@@ -40,7 +40,7 @@ class Program
                 Console.Write("What is the goal description? ");
                 string description = Console.ReadLine();
 
-                Console.Write("How many points would you like to associate with this goal?");
+                Console.Write("How many points would you like to associate with this goal? ");
                 int points = int.Parse(Console.ReadLine());
 
                 if (goalType == "1")

@@ -55,11 +55,11 @@ public class GoalManager
 
         if (_goals.Count == 0)
         {
-            Console.WriteLine("The goals are: ");
+            Console.WriteLine("\n**List of Goals** ");
             return;
         }
 
-        Console.WriteLine("The goals are:");
+        Console.WriteLine("\n**List of Goals** ");
         for (int i=0; i < _goals.Count; i++)
         {
             Console.WriteLine($"{i+1}. {_goals[i].GetGoalName()}");
