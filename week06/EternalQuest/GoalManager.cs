@@ -43,13 +43,40 @@ public class GoalManager
         Console.WriteLine ($"Total Points: {_totalPoints}");
     }
 
-    public void SaveGoals()
+    public void SaveGoals(string filename)
     {
-
+        using(StreamWriter writer = new StreamWriter(filename))
+        {
+            foreach(Goal goal in _goals)
+            {
+                writer.WriteLine(goal.GetStringRepresentation());
+            }
+        }
     }
-    public void LoadGoals()
+    public void LoadGoals(string filename)
     {
-
+        _goals.Clear();
+        using(StreamReader reader = new StreamReader(filename))
+        {
+            string line;
+            while ((line = reader.ReadLine()) != null)
+            {
+                string [] parts = line.Split('|');
+                string type = parts [0];
+                if (type == "1")
+                {
+                    _goals.Add( new SimpleGoal(parts[1], parts[2], int.Parse(parts[3])));
+                }
+                else if (type == "2")
+                {
+                    _goals.Add(new EternalGoal(parts[1], parts[2], int.Parse(parts[3])));
+                }
+                else if (type == "3")
+                {
+                    _goals.Add(new ChecklistGoal(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), int.Parse(parts[5])));
+                }
+            }
+        }
     }
 
 

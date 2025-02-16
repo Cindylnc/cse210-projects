@@ -64,11 +64,41 @@ class Program
                 }
                 else
                 {
-                    Console.WriteLine("Invalid selection. Enter 1, 2, or 3");
+                    Console.
+                    WriteLine("Invalid selection. Enter 1, 2, or 3");
                 }
-
-
             }
+
+            else if (choice == "2")
+            {
+                goalManager.ListGoals();
+            }
+            else if (choice == "3")
+            {
+                Console.WriteLine("Enter filename to save: ");
+                string saveFile = Console.ReadLine();
+                goalManager.SaveGoals(saveFile);
+            }
+            else if (choice == "4")
+            {
+                Console.Write("Enter filename to load: ");
+                string loadFile = Console.ReadLine();
+                goalManager.LoadGoals(loadFile);
+            }
+            else if (choice == "5")
+            {
+                
+            }
+            else if (choice == "6")
+            {
+                Console.WriteLine("Exiting program...");
+                break;
+            }
+            else
+            {
+                Console.WriteLine("Invalid choice, please try again");
+            }
+
 
         }
     }
