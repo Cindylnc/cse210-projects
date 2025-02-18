@@ -18,10 +18,11 @@ public abstract class Activity
     {
         return _lenght;
     }
-    
 
     public abstract int GetDistance();
     public abstract int GetSpeed();
     public abstract int GetNumberofLamps();
+
+    public abstract string GetSummary();
 
 }
