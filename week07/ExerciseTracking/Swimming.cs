@@ -1,27 +1,29 @@
 public class Swimming: Activity
 {
 
-    public Swimming(string date, int lenght)
+    private int _laps;
+
+    public Swimming(string date, int lenght, int laps)
         : base(date, lenght)
         {
-            
+          _laps =  laps;  
         }
 
 
 
 
-    public override int GetDistance()
+    public override double GetDistance()
     {
-        return 0;
+        return _laps * 50 / 1000.0 * 0.62;
     }
 
-    public override int GetSpeed()
+    public override double GetSpeed()
     {
-       return 0;
+       return GetDistance() / Getlenght() * 60;
     }
-    public override int GetNumberofLamps()
+    public override double GetPace()
     {
-        return 0;
+        return Getlenght() / GetDistance();
     }
 
 }
