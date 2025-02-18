@@ -26,10 +26,7 @@ public class ChecklistGoal : Goal
         _timesCompleted = completed;
     }
 
-    /*public int GetBonusPoints()
-    {
-        return _bonusPoints;
-    }*/
+
     public override bool IsComplete()
     {
         return _timesCompleted >= _targetCount;
