@@ -1,27 +1,28 @@
 public class Biking: Activity
 {
+    private double _speed;
 
-    public Biking(string date, int lenght)
+    public Biking(string date, int lenght, double speed)
         : base(date, lenght)
         {
-            
+            _speed = speed;
         }
 
 
 
 
-    public override int GetDistance()
+    public override double GetDistance()
     {
-        return 0;
+        return _speed * Getlenght() / 60;
     }
 
-    public override int GetSpeed()
+    public override double GetSpeed()
     {
-       return 0;
+       return _speed;
     }
-    public override int GetNumberofLamps()
+    public override double GetPace()
     {
-        return 0;
+        return 60/ _speed;
     }
 
 }

@@ -1,8 +1,8 @@
 public abstract class Activity
 {
-    protected string _date;
-    protected int _lenght;
-    
+    private string _date;
+    private int _lenght;
+
 
     public Activity (string date, int lenght)
     {
@@ -20,10 +20,13 @@ public abstract class Activity
         return _lenght;
     }
 
-    public abstract int GetDistance();
-    public abstract int GetSpeed();
-    public abstract int GetNumberofLamps();
+    public abstract double GetDistance();
+    public abstract double GetSpeed();
+    public abstract double GetPace();
 
-    public abstract string GetSummary();
+    public virtual string GetSummary()
+    {
+        return 0;
+    }
 
 }

@@ -1,27 +1,27 @@
 public class Running: Activity
 {
-
-    public Running(string date, int lenght)
+    private double _distance;
+    public Running(string date, int lenght, double distance)
         : base(date, lenght)
         {
-            
+            _distance = distance;
         }
 
 
 
 
-    public override int GetDistance()
+    public override double GetDistance()
     {
-        return 0;
+        return _distance;
     }
 
-    public override int GetSpeed()
+    public override double GetSpeed()
     {
-       return 0;
+       return _distance / _GetLength() * 60;
     }
-    public override int GetNumberofLamps()
+    public override double GetPace()
     {
-        return 0;
+        return _GetLength() / _distance;
     }
 
 }
