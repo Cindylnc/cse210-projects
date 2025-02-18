@@ -15,7 +15,7 @@ public abstract class Activity
         return _date;
     }
 
-    public int Getlenght()
+    public int GetLength()
     {
         return _lenght;
     }

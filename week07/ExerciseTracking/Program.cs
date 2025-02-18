@@ -4,6 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
+        Console.WriteLine("");
         Console.WriteLine("Hello World! This is the ExerciseTracking Project.");
         Console.WriteLine("");
 
@@ -18,5 +19,6 @@ class Program
         {
             Console.WriteLine(activity.GetSummary());
         }
+        Console.WriteLine("");
     }
 }

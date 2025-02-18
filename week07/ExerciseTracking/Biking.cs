@@ -13,7 +13,7 @@ public class Biking: Activity
 
     public override double GetDistance()
     {
-        return _speed * Getlenght() / 60;
+        return _speed * GetLength() / 60;
     }
 
     public override double GetSpeed()

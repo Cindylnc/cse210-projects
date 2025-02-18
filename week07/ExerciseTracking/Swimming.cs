@@ -19,11 +19,11 @@ public class Swimming: Activity
 
     public override double GetSpeed()
     {
-       return GetDistance() / Getlenght() * 60;
+       return GetDistance() / GetLength() * 60;
     }
     public override double GetPace()
     {
-        return Getlenght() / GetDistance();
+        return GetLength() / GetDistance();
     }
 
 }
