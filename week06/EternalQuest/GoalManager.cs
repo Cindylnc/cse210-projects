@@ -101,6 +101,8 @@ public class GoalManager
     {
         using(StreamWriter writer = new StreamWriter(filename))
         {
+
+            writer.WriteLine(_totalPoints);
             foreach(Goal goal in _goals)
             {
                 writer.WriteLine(goal.GetStringRepresentation());
@@ -112,6 +114,11 @@ public class GoalManager
         
         using(StreamReader reader = new StreamReader(filename))
         {
+            if(int.TryParse(reader.ReadLine(), out int savedPoints))
+            {
+                _totalPoints = savedPoints;
+            }
+
             string line;
             while ((line = reader.ReadLine()) != null)
             {
@@ -119,7 +126,10 @@ public class GoalManager
                 string type = parts [0];
                 if (type == "SimpleGoal")
                 {
-                    _goals.Add( new SimpleGoal(parts[1], parts[2], int.Parse(parts[3])));
+                    bool isComplete = bool.Parse(parts [4]);
+                    var goal = new SimpleGoal(parts[1], parts[2], int.Parse(parts[3]));
+                    goal.SetComplete(isComplete);
+                    _goals.Add(goal);
                 }
                 else if (type == "EternalGoal")
                 {
@@ -127,7 +137,18 @@ public class GoalManager
                 }
                 else if (type == "ChecklistGoal")
                 {
-                    _goals.Add(new ChecklistGoal(parts[1], parts[2], int.Parse(parts[3]), int.Parse(parts[4]), int.Parse(parts[5])));
+
+                    int targetCount = int.Parse(parts [4]);
+                    int timesCompleted = int.Parse(parts [5]);
+
+                    var goal = new ChecklistGoal(parts[1], parts[2], int.Parse(parts[3]), targetCount, int.Parse(parts[6]));
+                    goal.SetTimesCompleted(timesCompleted);
+                    _goals.Add(goal);
+                    /*_goals.Add(new ChecklistGoal(parts[1], parts[2], int.Parse(parts[3]), targetCount, bonutPoints)
+                    {
+                        TimesCompleted = timesCompleted
+                    });*/
+                    
                 }
             }
         }

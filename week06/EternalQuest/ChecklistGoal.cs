@@ -11,7 +11,7 @@ public class ChecklistGoal : Goal
         _bonusPoints = bonusPoints;
     }
 
-    public int GetCurrentCount()
+    /*public int GetCurrentCount()
     {
         return _timesCompleted;
     }
@@ -22,7 +22,7 @@ public class ChecklistGoal : Goal
     public int GetBonusPoints()
     {
         return _bonusPoints;
-    }
+    }*/
 
 
 
@@ -36,6 +36,10 @@ public class ChecklistGoal : Goal
         return GetGoalPoints();
     }
 
+    public void SetTimesCompleted(int completed)
+    {
+        _timesCompleted = completed;
+    }
     public override bool IsComplete()
     {
         return _timesCompleted >= _targetCount;

@@ -34,6 +34,13 @@ class Program
 
                 string goalType = Console.ReadLine();
 
+                
+                if (goalType != "1" && goalType != "2" && goalType != "3")
+                {
+                    Console.WriteLine("Invalid selection.");   
+                    continue;
+                }
+
                 Console.Write("What is the goal name? ");
                 string name = Console.ReadLine();
 
@@ -41,11 +48,14 @@ class Program
                 string description = Console.ReadLine();
 
                 Console.Write("How many points would you like to associate with this goal? ");
+
+
                 int points = int.Parse(Console.ReadLine());
+
 
                 if (goalType == "1")
                 {
-                    goalManager.AddGoal(new SimpleGoal(name, description,points));
+                    goalManager.AddGoal(new SimpleGoal(name, description, points));
                 }
                 else if (goalType == "2")
                 {
@@ -62,11 +72,7 @@ class Program
                     goalManager.AddGoal(new ChecklistGoal (name, description, points, targetCount, bonusPoints));
 
                 }
-                else
-                {
-                    Console.
-                    WriteLine("Invalid selection. Enter 1, 2, or 3");
-                }
+            
             }
 
             else if (choice == "2")

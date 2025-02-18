@@ -25,6 +25,11 @@ public class SimpleGoal: Goal
         return _isComplete;
     }
 
+    public void SetComplete (bool complete)
+    {
+        _isComplete = complete;
+    }
+
     public override string GetDetailsString()
     {
         return $"[{(IsComplete() ? "X" : " ")}] {GetGoalName()} ({GetGoalDescription()})";
