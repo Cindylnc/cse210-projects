@@ -95,21 +95,10 @@ class Program
             {
 
                 goalManager.RecordEvent();
-                /*goalManager.ListGoals();
-
-                Console.Write("Which goal did you accomplish? (Enter number): ");
-                if (int.TryParse(Console.ReadLine(), out int goalIndex))
-                {
-                    goalManager.RecordEvent(goalIndex - 1);
-                }
-                else{
-                    Console.Write("Invalid input. Please enter a number.");
-                }*/
-                
             }
             else if (choice == "6")
             {
-                Console.WriteLine("Exiting program...");
+                Console.WriteLine("See you next time!...");
                 break;
             }
             else

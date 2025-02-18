@@ -1,3 +1,4 @@
-SimpleGoal|rr|rrrrrrr|10|True
-EternalGoal|tt|tttttt|50
-ChecklistGoal| w|ww|20|2|2
+5
+SimpleGoal|hi|go to nhj|1|False
+EternalGoal|et|this is et|2
+ChecklistGoal| ty|uig ghyg vgvgv |3|2|1|100

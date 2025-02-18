@@ -11,25 +11,10 @@ public class ChecklistGoal : Goal
         _bonusPoints = bonusPoints;
     }
 
-    /*public int GetCurrentCount()
-    {
-        return _timesCompleted;
-    }
-    public int GetTargetCount()
-    {
-        return _targetCount;
-    }
-    public int GetBonusPoints()
-    {
-        return _bonusPoints;
-    }*/
-
-
-
     public override int RecordEvent()
     {
         _timesCompleted ++;
-        if (_timesCompleted >= _targetCount)
+        if (_timesCompleted == _targetCount)
         {
             return GetGoalPoints() + _bonusPoints;
         }
@@ -40,6 +25,11 @@ public class ChecklistGoal : Goal
     {
         _timesCompleted = completed;
     }
+
+    /*public int GetBonusPoints()
+    {
+        return _bonusPoints;
+    }*/
     public override bool IsComplete()
     {
         return _timesCompleted >= _targetCount;
@@ -47,12 +37,12 @@ public class ChecklistGoal : Goal
 
     public override string GetDetailsString()
     {
-        return $"[{(IsComplete() ? "X" : " ")}] {GetGoalName()}  ({GetGoalDescription()}) -- Currently completed: {_timesCompleted}/{_targetCount}";
+        return $"[{(IsComplete() ? "X" : " ")}] {GetGoalName()}  ({GetGoalDescription()}) -- Completed: {_timesCompleted}/{_targetCount}";
     }
 
     public override string GetStringRepresentation()
     {
-        return $"ChecklistGoal| {GetGoalName()}|{GetGoalDescription()}|{GetGoalPoints()}|{_targetCount}|{_timesCompleted}";
+        return $"ChecklistGoal| {GetGoalName()}|{GetGoalDescription()}|{GetGoalPoints()}|{_targetCount}|{_timesCompleted}|{_bonusPoints}";
     }
 
 

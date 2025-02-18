@@ -33,13 +33,4 @@ public abstract class Goal
     public abstract string GetStringRepresentation();
 
 
-   /* {
-        return $"{_goalName} - {_goalDescription} ({_goalPoints} points)";
-    }*/
-
-
-
-
-
-
 }
